@@ -14,12 +14,12 @@ def options():
 
 # hàm chứa các mô đun tìm tên miền
 def finding_domain():
-    from module.tim_ten_mien import run_manager
+    from tim_ten_mien import run_manager
     run_manager(path_train="ten_mien_dao_tao.txt", path_domain="ten_mien_da_tim.txt")
 
 # hàm chứa các mô đun dự đoán tên miền
 def predict_domain_hoc_may():
-    from module.doan_ten_mien_hoc_may import DomainPredict
+    from doan_ten_mien_hoc_may import DomainPredict
     while True:
         try:
             domain_ = input("nhập tên miền của bạn để tôi đoán: ").lower().strip()
@@ -30,14 +30,14 @@ def predict_domain_hoc_may():
 
 # hàm chứa các mô đun đoán tên miền trong file đã nhận
 def file_predict_hoc_may():
-    from module.du_doan_lai_tep_hoc_may import file_domains_predict
+    from du_doan_lai_tep_hoc_may import file_domains_predict
     domains_result = file_domains_predict(path_domain="ten_mien_da_tim.txt", path_train="ten_mien_dao_tao.txt")
     for domain in domains_result:
         print(domain)
     input("\nnhấn enter để đóng")
 
 def predict_domain_hoc_sau():
-    from module.doan_ten_mien_hoc_sau import DLPredict
+    from doan_ten_mien_hoc_sau import DLPredict
     model, vectorizer = DLPredict().neural_netwwork("ten_mien_dao_tao.txt")
     os.system("cls")
     while True:
@@ -55,7 +55,7 @@ def predict_domain_hoc_sau():
             continue
 
 def file_predict_hoc_sau():
-    from module.doan_lai_tep_hoc_sau import predict_model
+    from doan_lai_tep_hoc_sau import predict_model
     domain_pre = predict_model(path_domain="ten_mien_da_tim.txt", path_train="ten_mien_dao_tao.txt")
     os.system("cls")
     for result in domain_pre:
@@ -72,7 +72,7 @@ def training():
             print("vui lòng nhập đúng tên miền đi ạ")
             continue
         try:
-            from module.dao_tao import save_file
+            from dao_tao import save_file
             print(save_file(path="ten_mien_dao_tao.txt", domain=get_domain))
             input("nhập enter để tiếp tục đào tạo")
             os.system("cls")
@@ -82,7 +82,7 @@ def training():
             continue
 
 def install_package():
-    from module.tai_goi_can_thiet import install
+    from tai_goi_can_thiet import install
     print(install())
 
 # in ra các tiêu đề trước khi chạy vòng lặp bắt ngoại lệ
