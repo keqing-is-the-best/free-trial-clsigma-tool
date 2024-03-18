@@ -1,5 +1,5 @@
 import os
-from module.doan_ten_mien_hoc_sau import DLPredict
+from doan_ten_mien_hoc_sau import DLPredict
 
 # tách các phân loại ra để chỉ lấy tên miền
 def file_domain_geted(path):
