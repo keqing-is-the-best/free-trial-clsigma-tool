@@ -1,4 +1,4 @@
-from module.doan_ten_mien_hoc_may import DomainPredict
+from doan_ten_mien_hoc_may import DomainPredict
 import os
 
 # in ra thanh tải
