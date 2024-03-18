@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from module.doan_ten_mien_hoc_may import DomainPredict
+from doan_ten_mien_hoc_may import DomainPredict
 import os
 
 # thiết lập trình duyệt
